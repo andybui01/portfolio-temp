@@ -42,7 +42,7 @@ function draw() {
     const xScale = d3
         .scaleLinear()
         .range([0, width])
-        .domain([0,BALL_COUNT*2]);
+        .domain([0,BALL_COUNT*15]);
 
     const area = d3
         .area()

@@ -41,14 +41,12 @@ function plusRecover() {
 }
 
 function plusTime() {
-    data[time] = {
-        time: time,
+    data[tick_count] = {
+        time: tick_count,
         recovered: RECOVERED_COUNT,
         infected: INFECTED_COUNT,
         healthy: HEALTHY_COUNT
-        
     }
-    time++;
     // Refresh graph
     d3.select("div#reload").select("div#chart").remove();
     d3.select("div#reload").append("div").attr("id", "chart");
