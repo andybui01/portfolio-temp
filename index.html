@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Andy Bui</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  </head>
-  <body>
-  <p>HELLO!</p>
-  <p>My name's Bao-Du (Andy) Bui. I'm a university student studying Computer Science at UNSW.
-    My interests include weightlifting (olympic), soccer and some video games.</p>
-    <br>
-  <br>
-  <h3>Projects</h3>
-  <p>Coming <em>soon</em>...</p>
+<head>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="node_modules/d3-force-bounce/dist/d3-force-bounce.js"></script>
+    <script src="helpers.js"></script>
+    <script src="area.js"></script>
+    <!-- <script src="//unpkg.com/d3-force-bounce/dist/d3-force-bounce.min.js"></script> -->
+</head>
 
-  <br>
-  <h3>Some links</h3>
-  <ul>
-	  <li><a href="https://instagram.com/andybui01">Instagram</a></li>
-	  <li><a href="https://github.com/andybui01">Github</a></li>
-  </ul>
-  </body>
-</html>
+<body>
+    <!-- Info box -->
+    <h3>Healthy: <span class="healthy-count"></span></h3>
+    <h3>Infected: <span class="infected-count"></span></h3>
+    <h3>Recovered: <span class="recovered-count"></span></h3>
+    <h3>Time: <span class="time-count"></span></h3>
+
+    <!-- Where the area graph will go -->
+    <div id="reload">
+        <div id="chart"></div>
+    </div>
+
+    <div class="canvas-wrapper">
+        <div class="controls">
+            How many stay at home?:
+            <input class="slider" type="range" min="0" max="1" step="0.1" value="0" oninput="setIsolation(this.value)">
+        </div>
+        <svg id="canvasSimulation">
+        </svg>
+    </div>
+
+    <script src="index.js"></script>
+</body>
